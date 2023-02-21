@@ -34,7 +34,7 @@ class Game():
     def start(self):
 
         self.welcome()
-        while self.missed < 5 and self.active_phrase.check_complete(self.guesses) == False:
+        while self.missed < 6 and self.active_phrase.check_complete(self.guesses) == False:
             print("Number missed: {}".format(self.missed))
             self.active_phrase.display(self.guesses)
             user_guess = self.get_guess()
@@ -50,7 +50,7 @@ class Game():
 
     def game_over(self):
 
-        if self.missed >= 5:
+        if self.missed >= 6:
             print("\nI'm sorry you've missed too many letters\n")
             self.active_phrase.display(self.guesses)
         else:
