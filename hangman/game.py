@@ -40,6 +40,10 @@ class Game():
             user_guess = self.get_guess()
             if user_guess not in self.guesses:
                 self.guesses.append(user_guess)
+            else:
+                print('''\nYou have already entered that letter, try another one.
+Easy, I will not consider it a mistake. Remember the used letter are {}'''.format(self.guesses))
+                continue
             self.active_phrase.check_guess(user_guess)
             if self.active_phrase.check_guess(user_guess):
                 print("\nYAY!!!")
