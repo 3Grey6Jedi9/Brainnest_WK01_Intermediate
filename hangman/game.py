@@ -59,7 +59,7 @@ Easy, I will not consider it a mistake. Remember the used letter are {}'''.forma
             print("\nI'm sorry you've missed too many letters\n")
             self.active_phrase.display(self.guesses)
         else:
-            print('\nwell done!!! you got it!!, you guessed the correct phrase: \n')
+            print('\nWell done!!! You got it!!, you guessed the correct phrase: \n')
             self.active_phrase.display(self.guesses)
 
         while ValueError:
