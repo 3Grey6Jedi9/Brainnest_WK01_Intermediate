@@ -28,23 +28,24 @@ class Game():
 
     def welcome(self):
         print("""   *** ----------------------------------------------- ***
-   WELCOME LADIES AND GENTLEMEN TO PHRAAAAASE HUNTEEEER!!!
+   WELCOME LADIES AND GENTLEMEN TO HANGMAN!!!
    -------------------------------------------------------""")
 
     def start(self):
 
         self.welcome()
         while self.missed < 6 and self.active_phrase.check_complete(self.guesses) == False:
-            print("Number missed: {}".format(self.missed))
+            print("\nYou have {} tries left\n".format(6-self.missed))
             self.active_phrase.display(self.guesses)
             user_guess = self.get_guess()
-            self.guesses.append(user_guess)
+            if user_guess not in self.guesses:
+                self.guesses.append(user_guess)
             self.active_phrase.check_guess(user_guess)
             if self.active_phrase.check_guess(user_guess):
-                print("YAY")
+                print("\nYAY!!!")
             if not self.active_phrase.check_guess(user_guess):
                 self.missed += 1
-
+            print('\nUsed letters: {}'.format(self.guesses))
         self.game_over()
 
 
